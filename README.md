@@ -1,4 +1,4 @@
-git init# Getting Started
+# Getting Started
 
 Welcome to your new project.
 
