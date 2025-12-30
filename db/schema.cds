@@ -6,14 +6,14 @@ using {
 namespace tutorial.db;
 
 entity Books : cuid, managed {
-    title    : String;
-    author   : Association to Author;
-    genre : String;
+    title       : String;
+    author      : Association to Author;
+    genre       : String;
     publishedAt : Date;
-    pages : Integer;
-    price : Decimal(9,2);
-    Chapters : Composition of many Chapters
-                   on Chapters.book = $self;
+    pages       : Integer;
+    price       : Decimal(9, 2);
+    Chapters    : Composition of many Chapters
+                      on Chapters.book = $self;
 }
 
 entity Author : cuid, managed {
@@ -23,6 +23,8 @@ entity Author : cuid, managed {
 }
 
 entity Chapters : cuid, managed {
-        number : Integer;
     key book   : Association to Books;
+        number : Integer;
+        title : String;
+        Pages : Integer;
 }
